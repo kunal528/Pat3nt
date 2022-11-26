@@ -1,0 +1,46 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--black);
+  color: white;
+  scroll-behavior: smooth;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  padding: 50px 100px;
+}
+
+:root {
+  --black: #100f15;
+  --white: #ffffff;
+  --gray: #f5f5f5;
+  --yellow: #fd01a7;
+  --pink: #8247e5;
+  --purple: #8247e5;
+  --linear-gradient: linear-gradient(
+    98.62deg,
+    #fd01a7 -27.91%,
+    #8247e5 102.96%
+  );
+  --glass: rgba(55, 55, 55, 0.3);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+  }
+}
