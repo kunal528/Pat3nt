@@ -225,10 +225,10 @@ contract NFTPatent is ERC721URIStorage
     }
 
     
-    function GetValueInDOllar(uint _maticamount) public view returns(uint,uint){
+    function GetValueInDOllar(uint _REEFamount) public view returns(uint,uint){
         uint ValuePrice = GetLatestPrice();
-        uint nondecimalvalue =(ValuePrice * _maticamount) / 1e8;
-        uint decimalvalue = (ValuePrice * _maticamount) / 1e6;
+        uint nondecimalvalue =(ValuePrice * _REEFamount) / 1e8;
+        uint decimalvalue = (ValuePrice * _REEFamount) / 1e6;
         return  (nondecimalvalue,decimalvalue);
     }
 

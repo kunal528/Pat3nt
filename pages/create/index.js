@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { category } from "..";
 import styles from "../../styles/Create.module.css";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import recorder from "react-canvas-recorder";
 import { uploadMetadata } from "../../lib/uploadMetadata";
 import { toast } from "react-toastify";
-// import { mint } from "../../lib/web3Adaptor";
+import { mint } from "../../lib/web3Adaptor";
+import Web3State from "../../lib/webState";
 
 const Create = () => {
     const [state, setState] = useState({
@@ -13,6 +14,8 @@ const Create = () => {
         description: "",
         category: "NFT",
     });
+
+    const {signer} = useContext(Web3State)
 
     const ref = useRef();
 
@@ -84,7 +87,7 @@ const Create = () => {
 
 
     const handleMinting = async (cid) => {
-        // await mint("ipfs://" + cid, state.category);
+        await mint("ipfs://" + cid, state.category, signer);
     };
     const handleSubmit = async () => {
         const cid = await toast.promise(upload, {

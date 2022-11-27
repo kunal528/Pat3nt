@@ -1,9 +1,11 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { initializeWeb3 } from "../lib/web3Adaptor";
 import styles from "../styles/Navbar.module.css";
+import Web3State from "../lib/webState";
 const Navbar = () => {
   const [address, setAddress] = useState(null);
+  const {signer} = useContext(Web3State)
 
   const handleClick = () => {
     // if (address) {
@@ -16,10 +18,17 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    if (signer) {
+      console.log('signer', signer)
+      signer.getSubstrateAddress().then(val => {
+        setAddress(val)
+        console.log(val)
+      })
+    }
     // initializeWeb3().then((res) => {
     //   setAddress(res?.accounts[0]);
     // });
-  }, []);
+  }, [signer]);
 
   return (
     <div className={styles.container}>

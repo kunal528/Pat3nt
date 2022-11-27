@@ -17,12 +17,12 @@ body {
   --white: #ffffff;
   --gray: #f5f5f5;
   --yellow: #fd01a7;
-  --pink: #8247e5;
-  --purple: #8247e5;
+  --pink: #5d3bad;
+  --purple: #5d3bad;
   --linear-gradient: linear-gradient(
     98.62deg,
-    #fd01a7 -27.91%,
-    #8247e5 102.96%
+    #a93185 -27.91%,
+    #5d3bad 102.96%
   );
   --glass: rgba(55, 55, 55, 0.3);
 }

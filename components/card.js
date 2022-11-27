@@ -10,8 +10,6 @@ const Card = ({ nft }) => {
   const getMetadata = async () => {
     const data = await fetch(getIPFS(nft.tokenURI));
     const json = await data.json();
-    const getDollarPrice = await GetValueInDollar(nft.price)
-    json.dollarPrice = getDollarPrice
     setMetadata(json);
   };
   useEffect(() => {
@@ -39,8 +37,7 @@ const Card = ({ nft }) => {
             </div>
             <div className={styles.offer}>Latest Offer</div>
             <div className={styles.offer}>
-              {(nft.price / 10 ** 18).toFixed(2)} MATIC({" "}
-              {(metadata.dollarPrice)} USD) 
+              {(nft.price / 10 ** 18).toFixed(2)} REEF 
             </div>
           </div>
           <div className={styles.right}>

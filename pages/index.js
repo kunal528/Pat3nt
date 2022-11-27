@@ -1,15 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Card from "../components/card";
 import TabButton from "../components/tab_button";
+import { getFromCategory } from "../lib/web3Adaptor";
 import styles from "../styles/Home.module.css";
-
-// import { Signer as EVMSigner } from "@reef-defi/evm-provider";
-import { getReefExtension, initProvider } from "../lib/getProvider";
-// import { getFromCategory, GetValueInDollar, initializeWeb3 } from "../lib/web3Adaptor";
-
+import Web3State from "../lib/webState";
 
 
 
@@ -28,31 +25,23 @@ export default function Home() {
   const [activeTab, setActiveTab] = React.useState(0);
   const [nfts, setNfts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const { signer } = useContext(Web3State)
 
-  const setup = async () => {
-
-    // Return an array of all the injected sources
-    // (this needs to be called first)
-    initProvider()
-    var extension = getReefExtension('Minimal DApp Example');
-  }
 
 
 
   const handleFetch = async () => {
-    // initializeWeb3().then(async () => {
-    //   setLoading(true);
-    //   await getFromCategory(category[activeTab]).then((res) => {
-    //     setNfts(res);
-    //     setLoading(false);
-    //   });
-    // });
+    setLoading(true);
+    await getFromCategory(category[activeTab], signer).then((res) => {
+      setNfts(res);
+      setLoading(false);
+    });
   };
 
   useEffect(() => {
-    // handleFetch();
-      setup();
-  }, []);
+    if (signer)
+      handleFetch();
+  }, [activeTab, signer]);
 
   return (
     <div>
