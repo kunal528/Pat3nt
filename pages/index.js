@@ -6,15 +6,10 @@ import Card from "../components/card";
 import TabButton from "../components/tab_button";
 import styles from "../styles/Home.module.css";
 
+// import { Signer as EVMSigner } from "@reef-defi/evm-provider";
+import { getReefExtension, initProvider } from "../lib/getProvider";
 // import { getFromCategory, GetValueInDollar, initializeWeb3 } from "../lib/web3Adaptor";
-// import {
-//   TestAccountSigningKey,
-//   Provider,
-//   Signer,
-// } from "@reef-defi/evm-provider";
-// import { WsProvider, Keyring } from "@polkadot/api";
-// import { createTestPairs } from "@polkadot/keyring/testingPairs";
-// import { KeyringPair } from "@polkadot/keyring/types";
+
 
 
 
@@ -34,49 +29,14 @@ export default function Home() {
   const [nfts, setNfts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
-  // const setup = async () => {
-  
-  //   // Return an array of all the injected sources
-  //   // (this needs to be called first)
-  //   const allInjected = await web3Enable('your dapp');
-  
-  //   let injected;
-  //   if (allInjected[0] && allInjected[0].signer) {
-  //     injected = allInjected[0].signer;
-  //   }
-  
-  //   // Return an array of { address, meta: { name, source } }
-  //   // (meta.source contains the name of the extension)
-  //   const allAccounts = await web3Accounts();
-  
-  //   let account;
-  //   if (allAccounts[0] && allAccounts[0].address) {
-  //     account = allAccounts[0].address;
-  //   }
-  
-  //   const provider = new Provider({
-  //     provider: new WsProvider(WS_URL)
-  //   });
-  
-  //   await provider.api.isReady;
-  
-  //   const signer = new Signer(provider, account, injected);
-  
-  //   // Claim default account
-  //   if (!(await signer.isClaimed())) {
-  //     console.log(
-  //       "No claimed EVM account found -> claimed default EVM account: ",
-  //       await signer.getAddress()
-  //     );
-  //     await signer.claimDefaultAccount();
-  //   }
-  //   console.log(signer, provider);
-  //   return {
-  //     signer,
-  //     provider,
-  //   };
-  // }
-  
+  const setup = async () => {
+
+    // Return an array of all the injected sources
+    // (this needs to be called first)
+    initProvider()
+    var extension = getReefExtension('Minimal DApp Example');
+  }
+
 
 
   const handleFetch = async () => {
@@ -90,9 +50,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    handleFetch();
-    // setup();
-  }, [activeTab]);
+    // handleFetch();
+      setup();
+  }, []);
 
   return (
     <div>
@@ -101,7 +61,7 @@ export default function Home() {
         className={styles.about}
         style={{ scrollMarginTop: "200px" }}
         onMouseOver={(e) => {
-          
+
         }}
       >
         <div className={styles.about_text}>

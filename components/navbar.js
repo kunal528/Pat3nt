@@ -6,19 +6,19 @@ const Navbar = () => {
   const [address, setAddress] = useState(null);
 
   const handleClick = () => {
-    if (address) {
-      setAddress(null);
-    } else {
-      initializeWeb3().then((res) => {
-        setAddress(res.accounts[0]);
-      });
-    }
+    // if (address) {
+    //   setAddress(null);
+    // } else {
+    //   initializeWeb3().then((res) => {
+    //     setAddress(res.accounts[0]);
+    //   });
+    // }
   };
 
   useEffect(() => {
-    initializeWeb3().then((res) => {
-      setAddress(res?.accounts[0]);
-    });
+    // initializeWeb3().then((res) => {
+    //   setAddress(res?.accounts[0]);
+    // });
   }, []);
 
   return (
