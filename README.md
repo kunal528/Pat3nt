@@ -1,6 +1,6 @@
 # Patent-NFT-App
 
-> Patent-NFT-App is a Patent based NFT Marketplace platform created by Code-Decoders.
+> Patent-NFT-App is a Patent based NFT Marketplace platform.
 
 > Mint your Idea as an NFT , Sell your Idea as an NFT and also Buy others Idea as an NFT. 
 
@@ -19,28 +19,28 @@
 
 ## Deployed Smart Contracts
 
-- [The Patent NFT Contract](https://shasta.tronscan.org/#/contract/TJU6x2uk4ubGPNdU2boUndCi1VehQYiLdU/code)
+- [The Patent NFT Contract](https://testnet.reefscan.com/contract/0x79501d6AF15f5018B073b366943F24338DfB45bE)
 
 ## Demo
 
-Live Website (http://patent3.netlify.app/)
+Live Website (https://pat3nt-reef.netlify.app/)
 
 Youtube Video Demo
 
-[![Youtube Video](https://img.youtube.com/vi/KYnxJ5afecY/sddefault.jpg)](https://youtu.be/KYnxJ5afecY)
+[![Youtube Video](https://img.youtube.com/vi/KYnxJ5afecY/sddefault.jpg)](https://youtu.be/JjYXoZsCAGI)
 
 
 
 ## Tech Stack
 
-**Frontend:** NEXT.JS, Unity, WebGL, web3.js
+**Frontend:** NEXT.JS, Unity, WebGL, reef.js
 
-**Backend:** Solidity, IPFS, TRON Blockchain
+**Backend:** Solidity, IPFS, Reef Blockchain
 ## Roadmap
 
 - [ ]  Use AI for removing the spam ideas or dirty content.   
 - [ ]  Become a Standard NFT Marketplace.
-- [ ]  OpensSea.io integration.
+- [ ]  Sqwid integration.
 - [ ]  Security Enhancements/ Auditing in the Smart Contract.
 - [ ]  More upgrades and abilities.
 - [ ]  NFT Swapping Ideas. 
@@ -52,14 +52,13 @@ Youtube Video Demo
 Clone the project
 
 ```bash
-  git clone https://github.com/Code-Decoders/patent-nft-app
+  git clone https://github.com/kunal528/Pat3nt
 ```
 
 Go to the project directory
 
 ```bash
-  cd patent-nft-app
-```
+  cd Pat3nt
 
 Install dependencies
 
@@ -102,10 +101,9 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
     
 ## Feedback & Contact
 
-If you have any feedback or contact, please reach out to us at maadhav2001@gmail.com
+If you have any feedback or contact, please reach out to us at jainkunal976@gmail.com
 
 
 ## Authors
-- [@manikantanynala97](https://github.com/manikantanynala97)
-- [@Maadhav](https://www.github.com/Maadhav)
 - [@kunal528](https://www.github.com/kunal528)
+- [@Vatsal596](https://github.com/Vatsal596)
