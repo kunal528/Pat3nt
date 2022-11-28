@@ -4,6 +4,10 @@
 
 > Mint your Idea as an NFT , Sell your Idea as an NFT and also Buy others Idea as an NFT. 
 
+### Team:
+- [@kunal528](https://www.github.com/kunal528): Discord --> Kunal976#8165
+- [@Vatsal596](https://github.com/Vatsal596): Discord --> Vatsal bhatiya#9406
+
 
  
 ## Features
